@@ -23,8 +23,6 @@
 
 剪映官方入口为 [剪映官网](https://www.capcut.cn/)。官网可能只提供新版，本项目不提供安装包，也没有确认长期可用的官方 11.5.0 下载地址。已有新版时，不要为试用直接降级或覆盖旧草稿；没有匹配版本，应先停在环境准备阶段。
 
-本项目采用[个人学习和非商业使用许可](../LICENSE)，不应按 MIT / Apache-2.0 的商业开源项目理解。
-
 ## 第 1 步：打开终端，确认电脑
 
 在 Mac 上按 Command＋空格，搜索“终端”并打开。后续每个代码框都可以复制到终端，再按回车；不要复制代码框外的说明。
@@ -36,7 +34,7 @@ sw_vers -productVersion
 
 **成功标志：**第一行输出 `arm64`，系统版本为 `26.x` 或以上。如果是 `x86_64`，先确认是否为 Intel Mac 或终端运行在 Rosetta 模式；不要继续构建。
 
-本教程以命令输出作为成功对照，不使用模拟界面截图。真实案例画面见 [README](../README.md#画面对照)，不代表每一步的安装截图。
+本教程以命令输出作为成功对照，不使用模拟界面截图。真实案例画面见 [README](HYPIT-COLLABORATION.md)，不代表每一步的安装截图。
 
 ## 第 2 步：安装命令行工具
 
@@ -92,7 +90,7 @@ ffprobe -version
 
 ```bash
 cd ~/Documents
-git clone https://github.com/mcncarl/jianying-headless.git
+git clone https://github.com/Milllkey/jianying-headless.git
 cd jianying-headless
 ```
 
@@ -133,7 +131,7 @@ python3 tools/start_here.py check
 
 ```bash
 python3 tools/build_native_codec.py
-python3 skills/yichen-jianying-edit/scripts/headless_draft.py doctor
+python3 skills/agent-jianying-edit/scripts/headless_draft.py doctor
 ```
 
 **成功标志：**构建输出 `built-and-verified`，或已构建时输出 `already-valid`；随后 doctor 输出 `"status": "ok"`，11.5.0 对应 `"app_version": "11.5.0"`。
@@ -189,7 +187,7 @@ python3 tools/start_here.py build
 **成功标志：**输出 `"status": "verified"`，并确认素材未变、活动数据一致。
 这一步检查原生保存是否保留工程结构；只有亲自播放，才能确认画面和声音符合预期。
 
-验收前若自行改过文字、时间线或音量，verify 与原计划比较时可能正确地报错。不要为了通过而丢掉手工修改；先用未改过的练习稿跑通，再进入[独立副本编辑流程](../skills/yichen-jianying-edit/references/edit-existing-macos.md)。
+验收前若自行改过文字、时间线或音量，verify 与原计划比较时可能正确地报错。不要为了通过而丢掉手工修改；先用未改过的练习稿跑通，再进入[独立副本编辑流程](../skills/agent-jianying-edit/references/edit-existing-macos.md)。
 
 ## 可选：导出 MP4
 
@@ -225,6 +223,6 @@ python3 tools/start_here.py build
 
 ## 跑通之后
 
-先读 [计划格式](../skills/yichen-jianying-edit/references/headless-macos.md)，再尝试多轨、变速和字幕。
-需要 Agent 协助时再安装[配套 Skill](../skills/yichen-jianying-edit/README.md)；基本流程不依赖任何 Agent。
+先读 [计划格式](../skills/agent-jianying-edit/references/headless-macos.md)，再尝试多轨、变速和字幕。
+需要 Agent 协助时再安装[配套 Skill](../skills/agent-jianying-edit/README.md)；基本流程不依赖任何 Agent。
 完整兼容边界及未解决问题见 [验证状态](VERIFICATION.md)。

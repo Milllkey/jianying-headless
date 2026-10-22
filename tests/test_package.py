@@ -20,7 +20,7 @@ else:
 
 WORK = ROOT / 'work/package-tests'
 WORK.mkdir(parents=True, exist_ok=True)
-ENTRY = ROOT / 'skills/yichen-jianying-edit/scripts/headless_draft.py'
+ENTRY = ROOT / 'skills/agent-jianying-edit/scripts/headless_draft.py'
 
 
 class PackagingTests(unittest.TestCase):

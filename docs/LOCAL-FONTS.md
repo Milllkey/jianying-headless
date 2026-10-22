@@ -46,7 +46,7 @@ project root, install it into a virtual environment and use that interpreter:
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-fonts.txt
-.venv/bin/python skills/yichen-jianying-edit/scripts/headless_draft.py --help
+.venv/bin/python skills/agent-jianying-edit/scripts/headless_draft.py --help
 ```
 
 The pinned fontTools 4.60.2 supports the project's Python 3.9 minimum. Use this

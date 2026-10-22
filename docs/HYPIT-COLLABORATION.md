@@ -81,15 +81,15 @@
 在仓库根目录运行，`/absolute/path/to/plan.json` 表示已准备好的本次计划：
 
 ```bash
-python3 skills/yichen-jianying-edit/scripts/headless_draft.py doctor
-python3 skills/yichen-jianying-edit/scripts/headless_draft.py build \
+python3 skills/agent-jianying-edit/scripts/headless_draft.py doctor
+python3 skills/agent-jianying-edit/scripts/headless_draft.py build \
   --plan /absolute/path/to/plan.json --out "$PWD/work/hypit-handoff-build"
-python3 skills/yichen-jianying-edit/scripts/headless_draft.py verify-build \
+python3 skills/agent-jianying-edit/scripts/headless_draft.py verify-build \
   --build "$PWD/work/hypit-handoff-build"
 ```
 
 输出目录必须不存在；本机首页登记、修改已有副本及导出方法见
-[README](../README.md) 与 [计划格式](../skills/yichen-jianying-edit/references/headless-macos.md)。
+[README](../README.md) 与 [计划格式](../skills/agent-jianying-edit/references/headless-macos.md)。
 无需安装或更新 Hypit 来读取一份已经准备好的交接计划；上述命令不会重新生成 Hypit 素材。
 
 ## 新建计划中的字体指定
@@ -107,7 +107,7 @@ python3 skills/yichen-jianying-edit/scripts/headless_draft.py verify-build \
 
 字体名和 CSS 字重不自动映射为文件。若标题、字幕使用不同字体，转换时分别指定文件；
 当前不处理同一片段内的多字体富文本，也不提供通用 Hypit 工程解析器。
-规则和完整步骤见 [Skill 字体交接说明](../skills/yichen-jianying-edit/references/hypit-handoff.md)。
+规则和完整步骤见 [Skill 字体交接说明](../skills/agent-jianying-edit/references/hypit-handoff.md)。
 此功能不改变上方历史案例的验证记录。独立字体样例已完成本机原生显示、可编辑性、保存重开及渲染检查；使用本机构建的 codec，完整编辑回读仍触发上游默认速度字段问题。环境与结果见 [字体验证记录](LOCAL-FONTS.md#native-acceptance-2026-09-20)，不代表上述 Hypit 案例的排版差异已经修复。
 
 ## 案例证据与分发边界

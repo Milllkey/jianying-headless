@@ -1,6 +1,6 @@
 # 运行依赖与来源
 
-- 核心项目：<https://github.com/mcncarl/jianying-headless>。公开源码预览；
+- 核心项目：<https://github.com/Milllkey/jianying-headless>。
   Skill 总目录或安装器不会自动提供核心运行环境。
 - 剪映专业版是用户单独安装的闭源运行依赖。官方库、字体、效果包、缓存媒体和
   账号权益不随本 Skill 分发。内部接口调用不代表官方 SDK 或集成许可。
@@ -23,8 +23,3 @@
   须按 `credits.md` 署名；CC BY-NC 禁止商用，商单、广告、带货、引流或开通收益的视频
   不能使用，须替换或加 `--commercial` 重跑。Openverse 汇总的许可信息未经核验，
   技术上取得音效不等于获得许可；发布前可打开 `credits.md` 中的原始页面复核。
-
-代码许可证只覆盖明示有权许可的部分，不授予剪映程序库、账号或媒体素材的权利。
-本 Skill 的原创部分沿用个人学习和非商业使用条款，见 [LICENSE](../LICENSE)。
-商业用途须取得作者明确书面授权；第三方内容保留原有许可。单独收录本 Skill，
-不改变总仓库其他目录的许可证，也不把本 Skill 标为 MIT / Apache-2.0 整包开源。

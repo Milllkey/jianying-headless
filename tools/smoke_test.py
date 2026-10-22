@@ -12,7 +12,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
-ENTRY = ROOT / 'skills/yichen-jianying-edit/scripts/headless_draft.py'
+ENTRY = ROOT / 'skills/agent-jianying-edit/scripts/headless_draft.py'
 
 
 def main():

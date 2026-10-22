@@ -16,9 +16,9 @@ JIANYING_FFPROBE environment variables second, and PATH last.
 ## Build, verify and export
 
 ~~~powershell
-python skills\yichen-jianying-edit\scripts\headless_draft.py build --plan D:\input\plan.json --out D:\jianying-headless\work\windows-build
-python skills\yichen-jianying-edit\scripts\headless_draft.py verify-build --build D:\jianying-headless\work\windows-build
-python skills\yichen-jianying-edit\scripts\headless_draft.py export --backend windows-ffmpeg --build D:\jianying-headless\work\windows-build --out D:\jianying-headless\work\windows-export --font C:\Windows\Fonts\msyh.ttc
+python skills\agent-jianying-edit\scripts\headless_draft.py build --plan D:\input\plan.json --out D:\jianying-headless\work\windows-build
+python skills\agent-jianying-edit\scripts\headless_draft.py verify-build --build D:\jianying-headless\work\windows-build
+python skills\agent-jianying-edit\scripts\headless_draft.py export --backend windows-ffmpeg --build D:\jianying-headless\work\windows-build --out D:\jianying-headless\work\windows-export --font C:\Windows\Fonts\msyh.ttc
 ~~~
 
 On Windows the Windows backend is the default. The build stores a deterministic

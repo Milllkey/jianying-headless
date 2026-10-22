@@ -20,7 +20,7 @@ import urllib.parse
 import wave
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / 'skills/yichen-jianying-edit/scripts'))
+sys.path.insert(0, str(ROOT / 'skills/agent-jianying-edit/scripts'))
 import edit_plan
 import openverse_sfx
 

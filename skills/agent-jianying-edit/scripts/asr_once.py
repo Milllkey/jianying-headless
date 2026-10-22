@@ -10,7 +10,7 @@ import subprocess
 import sys
 import time
 
-EXECUTOR = Path(os.environ.get('YICHEN_ASR_EXECUTOR', str(Path.home() / 'scripts/transcribe.py')))
+EXECUTOR = Path(os.environ.get('AGENT_ASR_EXECUTOR', str(Path.home() / 'scripts/transcribe.py')))
 
 
 def digest(path):

@@ -115,7 +115,7 @@ def main():
                 require((path.parent / target).is_file(), 'Broken relative link in ' + relative + ': ' + target)
         inventory[relative] = hashlib.sha256(raw).hexdigest()
 
-    wrapper = ROOT / 'skills/yichen-jianying-edit/scripts/headless_draft.py'
+    wrapper = ROOT / 'skills/agent-jianying-edit/scripts/headless_draft.py'
     for name, expected in literal(wrapper, 'PINS').items():
         require(digest(ROOT / 'engine' / name) == expected, 'Skill pin differs: ' + name)
     runtime = ROOT / 'engine/headless_runtime.py'

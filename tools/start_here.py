@@ -26,7 +26,7 @@ from runtime_profiles import validate_identity
 from build_toolchain import select_toolchain
 
 APP = Path('/Applications/VideoFusion-macOS.app')
-ENTRY = ROOT / 'skills/yichen-jianying-edit/scripts/headless_draft.py'
+ENTRY = ROOT / 'skills/agent-jianying-edit/scripts/headless_draft.py'
 
 
 def run(command, timeout=60):

@@ -34,17 +34,17 @@ PR10_BASE_ROOT=/absolute/path/to/base-checkout
 PR10_CANDIDATE_ROOT=/absolute/path/to/candidate-checkout
 PR10_WORK=/absolute/path/to/new-validation-job
 
-python3 "$PR10_BASE_ROOT/skills/yichen-jianying-edit/scripts/headless_draft.py" doctor
-python3 "$PR10_CANDIDATE_ROOT/skills/yichen-jianying-edit/scripts/headless_draft.py" doctor
+python3 "$PR10_BASE_ROOT/skills/agent-jianying-edit/scripts/headless_draft.py" doctor
+python3 "$PR10_CANDIDATE_ROOT/skills/agent-jianying-edit/scripts/headless_draft.py" doctor
 mkdir "$PR10_WORK"
 python3 "$PR10_CANDIDATE_ROOT/tools/reproduce_position_115.py" generate --out "$PR10_WORK/fixture"
-python3 "$PR10_BASE_ROOT/skills/yichen-jianying-edit/scripts/headless_draft.py" build \
+python3 "$PR10_BASE_ROOT/skills/agent-jianying-edit/scripts/headless_draft.py" build \
   --plan "$PR10_WORK/fixture/a-x-only.plan.json" --out "$PR10_WORK/frozen-a"
-python3 "$PR10_BASE_ROOT/skills/yichen-jianying-edit/scripts/headless_draft.py" verify-build --build "$PR10_WORK/frozen-a"
-python3 "$PR10_CANDIDATE_ROOT/skills/yichen-jianying-edit/scripts/headless_draft.py" verify-build --build "$PR10_WORK/frozen-a"
-python3 "$PR10_BASE_ROOT/skills/yichen-jianying-edit/scripts/headless_draft.py" export \
+python3 "$PR10_BASE_ROOT/skills/agent-jianying-edit/scripts/headless_draft.py" verify-build --build "$PR10_WORK/frozen-a"
+python3 "$PR10_CANDIDATE_ROOT/skills/agent-jianying-edit/scripts/headless_draft.py" verify-build --build "$PR10_WORK/frozen-a"
+python3 "$PR10_BASE_ROOT/skills/agent-jianying-edit/scripts/headless_draft.py" export \
   --build "$PR10_WORK/frozen-a" --out "$PR10_WORK/base-export"
-python3 "$PR10_CANDIDATE_ROOT/skills/yichen-jianying-edit/scripts/headless_draft.py" export \
+python3 "$PR10_CANDIDATE_ROOT/skills/agent-jianying-edit/scripts/headless_draft.py" export \
   --build "$PR10_WORK/frozen-a" --out "$PR10_WORK/candidate-export"
 python3 "$PR10_CANDIDATE_ROOT/tools/reproduce_position_115.py" measure \
   --video "$PR10_WORK/base-export/render.mp4" --out "$PR10_WORK/base-measurement.json"
@@ -73,7 +73,7 @@ python3 "$PR10_CANDIDATE_ROOT/tools/reproduce_position_115.py" measure \
 打开副本、检查速度内容、保存、完全退出、冷启动重开再退出后，运行：
 
 ```sh
-python3 skills/yichen-jianying-edit/scripts/headless_draft.py edit verify \
+python3 skills/agent-jianying-edit/scripts/headless_draft.py edit verify \
   --build /absolute/path/to/edit-build --report /absolute/path/to/new-save-report.json
 ```
 

@@ -28,7 +28,7 @@ import edit_plan
 API = 'https://api.openverse.org/v1/audio/'
 API_HOSTS = {'api.openverse.org'}
 DOWNLOAD_HOSTS = {'cdn.freesound.org'}
-USER_AGENT = 'yichen-jianying-edit-openverse-sfx/1 (local video editing, low volume)'
+USER_AGENT = 'agent-jianying-edit-openverse-sfx/1 (local video editing, low volume)'
 HEADLESS_SCHEMA = 'jy14-headless-plan/v1'
 TRACK_PREFIX = 'Openverse 音效'
 LICENSE_NAMES = {'cc0': 'CC0', 'by': 'CC BY', 'by-nc': 'CC BY-NC'}

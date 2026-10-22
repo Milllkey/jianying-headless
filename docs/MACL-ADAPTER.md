@@ -1,6 +1,6 @@
 # com.apple.macl 权限保留适配器（clonefile 临时索引）
 
-关联 [Issue #5](https://github.com/mcncarl/jianying-headless/issues/5)。本文件说明
+关联 Issue #5。本文件说明
 `publish()` 临时索引准备的权限保留机制与已验/未验边界。
 判定规则本身没有放宽；本文不描述也不支持任何忽略 `com.apple.macl`、
 按长度放行、删除属性或关闭 SIP/TCC 的方案。

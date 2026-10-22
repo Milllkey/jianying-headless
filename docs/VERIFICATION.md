@@ -403,7 +403,7 @@ X 中心逐帧相同；基线 Y 跨度 144 像素，候选跨度 0。该组使�
 
 ```bash
 python3 tools/build_native_codec.py
-python3 skills/yichen-jianying-edit/scripts/headless_draft.py doctor
+python3 skills/agent-jianying-edit/scripts/headless_draft.py doctor
 python3 tools/check_package.py
 python3 -m unittest discover -s tests -v
 python3 tools/smoke_test.py --export

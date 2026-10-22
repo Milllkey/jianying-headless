@@ -107,7 +107,7 @@ def helper():
 
 def validate_compiled(value):
     # This is the speech-plan validator, not the legacy native runtime wrapper.
-    scripts = PROJECT_ROOT / 'skills/yichen-jianying-edit/scripts'
+    scripts = PROJECT_ROOT / 'skills/agent-jianying-edit/scripts'
     if str(scripts) not in sys.path:
         sys.path.insert(0, str(scripts))
     from edit_plan import validate_compiled as validate

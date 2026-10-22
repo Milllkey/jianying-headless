@@ -59,7 +59,7 @@ def main():
             ]}
     plan_path = input_dir / 'plan.json'
     plan_path.write_bytes(windows_portable.packed(plan))
-    entry = ROOT / 'skills/yichen-jianying-edit/scripts/headless_draft.py'
+    entry = ROOT / 'skills/agent-jianying-edit/scripts/headless_draft.py'
     environment = dict(os.environ, JIANYING_HEADLESS_ROOT=str(ROOT))
     commands = [
         [sys.executable, str(entry), 'build', '--plan', str(plan_path), '--out', str(build)],

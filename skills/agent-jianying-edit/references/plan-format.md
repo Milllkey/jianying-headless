@@ -58,4 +58,4 @@ python3 SKILL/scripts/asr_once.py run --source WORK/voice-v1.wav --ledger WORK/a
 
 确认参数和删留决定后，用 `headless_draft.py from-compiled` 转换并无界面创建，命令见 [headless-macos.md](headless-macos.md)。`compile` 输出的 `openverse_sfx` 大于 0 时，会提示在 `from-compiled` 之后运行 `openverse_sfx.py add`，再用它写出的新计划 build。本发行不包含旧版模板适配器 `native_draft.py`，不调用未分发的脚本。
 
-ASR 执行器不随 Skill 分发。默认寻找当前用户目录的 `scripts/transcribe.py`，也可用 `YICHEN_ASR_EXECUTOR` 指定绝对路径；执行前确认其兼容本脚本所需参数，并有本次服务调用授权。没有转写依赖时可直接使用用户提供的同源时间戳计划。
+ASR 执行器不随 Skill 分发。默认寻找当前用户目录的 `scripts/transcribe.py`，也可用 `AGENT_ASR_EXECUTOR` 指定绝对路径；执行前确认其兼容本脚本所需参数，并有本次服务调用授权。没有转写依赖时可直接使用用户提供的同源时间戳计划。
