@@ -63,6 +63,7 @@ python3 skills/agent-jianying-edit/scripts/headless_draft.py export \
 - [本地字体](docs/LOCAL-FONTS.md)
 - [兼容性与验证](docs/VERIFICATION.md)
 - [工程交接示例](docs/HYPIT-COLLABORATION.md)
+- [11.6 工程互转研究与验证边界](docs/research/2026-10-22-draft-interchange.md)
 - [第三方依赖与许可](THIRD_PARTY_NOTICES.md)
 
 配套技能仓库：[Milllkey/agent-skills](https://github.com/Milllkey/agent-skills)。
@@ -75,3 +76,8 @@ python3 -m unittest discover -s tests -v
 ```
 
 实际剪映打开、保存和导出需在匹配的本机环境验收。
+
+只读检查已解码的明文工程结构，可使用 `tools/inspect_draft_schema.py`。
+它输出去内容化的字段、引用和特征清单，不读取密钥、不解密草稿、不调用原生引擎。
+与自有工作台的转换适配器及损失报告位于
+[haoyong-video](https://github.com/Milllkey/haoyong-video/tree/main/integrations/jianying)。

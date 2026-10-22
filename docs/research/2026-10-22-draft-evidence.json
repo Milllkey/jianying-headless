@@ -1,0 +1,193 @@
+{
+  "schema": "jianying-static-draft-evidence/v1",
+  "capturedOn": "2026-10-22",
+  "identity": {
+    "bundleId": "com.lemon.lvpro",
+    "version": "11.5.0",
+    "build": "11.5.0"
+  },
+  "scope": "Installed package resources only; no private drafts, media, credentials or native execution.",
+  "files": [
+    {
+      "path": "Info.plist",
+      "bytes": 3992,
+      "sha256": "1c2099857a474ad5ad95d61b5fe3621a6235fdb64fd9a682656b89dabafe3e5c"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/SKILL.md",
+      "bytes": 12113,
+      "sha256": "b52bf71d0760f132cafa1ea02cb7149c22363190da8a074c25a44ae80ac1e5bd"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/selection-expression.json",
+      "bytes": 7907,
+      "sha256": "2562a296fb92df46d7af26c88f9efb0da58c4fa142c22fb60bd8bc1660f8ba50"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/selection-expression.md",
+      "bytes": 4749,
+      "sha256": "cac967794e4be6e93ea3681de8b4c830c37738be8b27f283f20e238287786b2d"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/audio-sound-clips.md",
+      "bytes": 6692,
+      "sha256": "9877b06b59e3729bf93cc8bcc75355e831147fd8217e7c689d3faf3ce94221ba"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/core-track-and-fields.md",
+      "bytes": 13914,
+      "sha256": "716ea926bd8d708a1ffef076678621c74f0e53b58e04975e83357c383e6cd1c0"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/keyframes-and-layering.md",
+      "bytes": 6802,
+      "sha256": "1ed351f06cf5c67c8db8a0c3c3d87d1a20bccf3bd4191316cedca653ac4259a4"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/package-clips.md",
+      "bytes": 9439,
+      "sha256": "4a8937c97321807b76fbad5d92d2b9f12ab39bec2b2addf9376573512b4e1796"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/selection-reuse-checklist-examples.md",
+      "bytes": 21525,
+      "sha256": "ab9b01ec1ac18f46297d5592218903b5557f0a31d85282f8d2d42052d07da5a7"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/sticker-clips.md",
+      "bytes": 1627,
+      "sha256": "5b567705022182141bf39b79865cb0a15a5676b1fd282efa5ee993831bcff979"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/subtitle-template-clips.md",
+      "bytes": 12301,
+      "sha256": "8623ad19d165c664818433ce11d4bce55e6e77f6f9b3bef572ba1fca8c95a30d"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/text-template-clips.md",
+      "bytes": 21450,
+      "sha256": "114e7ec628ed877a2a6859bc45385359ef33916a1ffab9a3bc41fc056067674a"
+    },
+    {
+      "path": "Resources/canvas_agent/skills/studio.lyra.xml_timeline_builder/references/xml/visual-video-image-clips.md",
+      "bytes": 37915,
+      "sha256": "0aa60832b1c344e2ad7734ffa2ed649c16f7353b1e80e79cd12b04cfe944c881"
+    }
+  ],
+  "source_repository_commit": "eab61145d1266a19baf3d62ac9c02f237d15b0ce",
+  "repository_files": [
+    {
+      "path": "engine/blueprint.json",
+      "sha256": "91f7eddad5bff9af23eb88b53713c180e3e3d4054edd469140cfa9aa56bc1dc9",
+      "bytes": 18021
+    },
+    {
+      "path": "engine/blueprint-provenance.json",
+      "sha256": "aa62a952e20933dbae82c5f53c897332f4b659604310e319e1cb3c9ca806cff4",
+      "bytes": 952
+    },
+    {
+      "path": "engine/jy14_headless.py",
+      "sha256": "3feb3efeb10173303986609a36b9e173ccd651430acbb6b0cc8e945e4ffc2a9b",
+      "bytes": 55068
+    },
+    {
+      "path": "engine/runtime_profiles.py",
+      "sha256": "b1596599e97b90586ea444280bbca89a0e47bd7d34cc05773f2bcd4314b0e0c1",
+      "bytes": 4700
+    },
+    {
+      "path": "docs/POSITION-115-REPRO.md",
+      "sha256": "0c05f9f06256a9df4c934391e27129e4539f91fe71a1bbd9927f840c29970a4e",
+      "bytes": 9530
+    },
+    {
+      "path": "docs/COMPATIBILITY-115-ACCEPTANCE.md",
+      "sha256": "ff15f16750f23784d6b41cd7125946b38b1ef2a868652e19768daf424af249e3",
+      "bytes": 7595
+    },
+    {
+      "path": "docs/evidence/time-mapping-115.json",
+      "sha256": "5e57dd23e5b07261c80b5a2605568d1c60a561f6c9f7a026c1604e53c048cde2",
+      "bytes": 18577
+    },
+    {
+      "path": "docs/SAVED-DEFAULTS-116.md",
+      "sha256": "7e8b98815805113a3760c0216e8450c4838a949993843cf18e2fa64d301bd6b1",
+      "bytes": 5137
+    }
+  ],
+  "additional_snapshots": [
+    {
+      "identity": {
+        "bundleId": "com.lemon.lvpro",
+        "version": "11.6.0",
+        "build": "11.6.0"
+      },
+      "evidence_type": "static-declarations-only",
+      "files": [
+        {
+          "path": "Info.plist",
+          "bytes": 3992,
+          "sha256": "4077318dbe3fb12457ff951cfd3d7da6b7560977a1d523058b6b47ee2113b327"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/SKILL.md",
+          "bytes": 18785,
+          "sha256": "75d2a3171ec721cd46db5faabe2b4389323b1dec02d074a216cd7fb591ee789c"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/extensions.md",
+          "bytes": 14790,
+          "sha256": "28be9cbb51e36593e1fb50e85a5cd389ee4419ab8386bb273e579028249d0915"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/no-support.md",
+          "bytes": 1404,
+          "sha256": "04d0a8b834ad99542802c26188ce95cd7267b8fd8b8587513a11c0be30f3a9bb"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/segment-audio.md",
+          "bytes": 5103,
+          "sha256": "72aa2964eec7f31fd018939eae417c29800220fdf1d75caac02d8debad1e123a"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/segment-effects.md",
+          "bytes": 3872,
+          "sha256": "97de4a775fe199816fa316aa7b4d48f3ec98b4c62495e815c02ddc99c451744d"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/segment-packages.md",
+          "bytes": 11265,
+          "sha256": "0f6686ee0e39f13a0ec0bf0d73fd1bbe102505ca288dd3619c97eab7714e2730"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/segment-text-sticker.md",
+          "bytes": 20440,
+          "sha256": "d965ff7591d0f9a263d2f07fbf068e00c18883d2cb9e731c6759138fbef1456e"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/segment-visual.md",
+          "bytes": 23762,
+          "sha256": "8e0483b3ece2bc0738c90069a29068d6a7c5fac18f682422a80c19b1bd269123"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/selection.md",
+          "bytes": 11173,
+          "sha256": "6a38f90761c355bf52c74f742993addf8c729cd06b764fcc7c7270e5ba5d9269"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/timeline.md",
+          "bytes": 10008,
+          "sha256": "8897a067dd6a0482250634dd5d2388594908810ed8da7b24e38e262f58255251"
+        },
+        {
+          "path": "Resources/canvas_agent/skills/jianying.hub.studio_lyra_xml_timeline_builder_v2/references/transform.md",
+          "bytes": 12281,
+          "sha256": "e0c8898889928d39c603a1919bcb485b50511a72ed9a68c9f0810222eebbf485"
+        }
+      ],
+      "native_execution_verified": false
+    }
+  ]
+}
