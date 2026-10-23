@@ -4,6 +4,8 @@
 
 开发交接入口：[AGENTS.md](AGENTS.md)、[CLAUDE.md](CLAUDE.md)、[贡献说明](CONTRIBUTING.md)。自有剪辑引擎、模型任务和画布接入集中在 [haoyong-video](https://github.com/Milllkey/haoyong-video)，本仓保留原生草稿互通职责。
 
+主仓 0.15 的声音处理历史、保留音乐压低的本机复制及静态蒙版缓存已在[贡献说明](CONTRIBUTING.md)说明交接方式；这些独立引擎协议不自动扩大本仓原生草稿或无界面导出支持。
+
 ## 功能
 
 - 视频分段、多轨组合、变速、音量、画中画、字幕和标题。
