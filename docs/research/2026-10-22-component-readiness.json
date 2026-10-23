@@ -1,0 +1,49 @@
+{
+  "schema": "jianying-headless-component-readiness/v1",
+  "status": "blocked",
+  "components": [
+    {
+      "name": "SOURCE_MANIFEST.json",
+      "expected_sha256": "473b05370d77f0835e11f0fde4f3cec2eec0b00777aa0018441bc9e7b53bb300",
+      "actual_sha256": "473b05370d77f0835e11f0fde4f3cec2eec0b00777aa0018441bc9e7b53bb300",
+      "bytes": 2104,
+      "status": "matched"
+    },
+    {
+      "name": "runtime_io.py",
+      "expected_sha256": "487cf8c65bddad2ecdb351b16996d923bd6bcc6861dba12e801f679821b4ef70",
+      "actual_sha256": "487cf8c65bddad2ecdb351b16996d923bd6bcc6861dba12e801f679821b4ef70",
+      "bytes": 15799,
+      "status": "matched"
+    },
+    {
+      "name": "jy14_codec_hardened_11_4",
+      "expected_sha256": "b6533eb5eb1eea58dfa74fb1d16d3bb580970fe881f587605d358af1745f971d",
+      "status": "missing"
+    }
+  ],
+  "media_tools_available": {
+    "ffmpeg": true,
+    "ffprobe": true
+  },
+  "codec_executed": false,
+  "native_workflow_verified": false,
+  "read_only": true,
+  "network_called": false,
+  "next_step": "Keep the existing pins. Resolve missing or mismatched components, then run doctor and validate_runtime before a synthetic native workflow.",
+  "command_exit_code": 1,
+  "validation": {
+    "component_tests_passed": 8,
+    "runtime_profile_tests_passed": 10,
+    "commands": [
+      "python3 -m unittest discover -s tests -p test_runtime_report.py -v",
+      "python3 -m unittest discover -s tests -p test_runtime_profiles.py -v"
+    ],
+    "source_hashes": {
+      "tools/runtime_report.py": "597cb6f8fda92497df1cd85480b0433d7186fffb78d41b4c4ba8a5b06d56bad4",
+      "tests/test_runtime_report.py": "3213cb1953dc05a0040cb6707010e4d08892dce8ed8efcc4f354603c8fedd787",
+      "engine/headless_runtime.py": "06fe31718c4ef304e70e7db596b7b1089ec985242ba2769daf86a4b89754e26f",
+      "engine/runtime_profiles.py": "b1596599e97b90586ea444280bbca89a0e47bd7d34cc05773f2bcd4314b0e0c1"
+    }
+  }
+}
