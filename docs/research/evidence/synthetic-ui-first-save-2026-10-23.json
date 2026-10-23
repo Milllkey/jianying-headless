@@ -1,0 +1,168 @@
+{
+  "schema": "jianying-headless-synthetic-ui-readback/v1",
+  "stage": "first-native-save",
+  "runtime_version": "11.6.0",
+  "runtime_library_sha256": "a490d9a08b71a2d9af138d24528d3d40d65b37b06911627c53a2915c6cac0754",
+  "codec_sha256": "0502a5d22befff792f2b275f77309672141a7a5669dcb6abbb41b9815362c559",
+  "source_timeline_schema": "185.0.0",
+  "saved_timeline_schema": "189.0.0",
+  "schema_upgrade_recognized": true,
+  "saved_app_version": "11.6.0",
+  "timeline_and_draft_ids_unchanged": true,
+  "track_and_segment_ids_unchanged": true,
+  "main_timeline_reference_unchanged": true,
+  "duration_us": 2000000,
+  "fps": 30,
+  "canvas": {
+    "width": 640,
+    "height": 360
+  },
+  "four_active_mirrors_equal": true,
+  "four_active_mirrors_physically_independent": true,
+  "saved_timeline_cipher_sha256": "071dc2ac1d0f56b87ff638fa5d228434f118a1a3772ada71433b5dd8e832b718",
+  "media": [
+    {
+      "sha256": "1517cf151455e700a97d339f178b1eee3f879f2198fa6f1a5fb249d4c6902e2e",
+      "bytes": 329595,
+      "live_owned_copy_unchanged": true,
+      "synthetic_original_unchanged": true
+    }
+  ],
+  "tracks": [
+    {
+      "type": "video",
+      "segments": [
+        {
+          "source_timerange": {
+            "duration": 1000000
+          },
+          "target_timerange": {
+            "duration": 1000000
+          },
+          "speed": 1,
+          "volume": 0.3,
+          "clip_transform": {
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "transform": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "flip": {}
+          }
+        },
+        {
+          "source_timerange": {
+            "start": 1000000,
+            "duration": 1500000
+          },
+          "target_timerange": {
+            "start": 1000000,
+            "duration": 1000000
+          },
+          "speed": 1.5,
+          "volume": 0.3,
+          "clip_transform": {
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "transform": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "flip": {}
+          }
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "segments": [
+        {
+          "source_timerange": {
+            "duration": 2000000
+          },
+          "target_timerange": {
+            "duration": 2000000
+          },
+          "speed": 1,
+          "volume": 0.0,
+          "clip_transform": {
+            "scale": {
+              "x": 0.3,
+              "y": 0.3
+            },
+            "rotation": 12.0,
+            "transform": {
+              "x": 0.45,
+              "y": 0.4
+            },
+            "flip": {}
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "segments": [
+        {
+          "target_timerange": {
+            "duration": 2000000
+          },
+          "speed": 1,
+          "volume": 1,
+          "clip_transform": {
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "transform": {
+              "x": 0.0,
+              "y": -0.78
+            },
+            "flip": {}
+          },
+          "text": "私有源码打包测试"
+        }
+      ]
+    }
+  ],
+  "builder_subset_structure_verified": true,
+  "full_opaque_field_equivalence_claimed": false,
+  "live_index_read": false,
+  "other_drafts_read": false,
+  "live_files_written": false,
+  "operator_ui_observations": {
+    "source": "root agent normal UI observation, independently viewed saved screenshots",
+    "opened_successfully": true,
+    "playback_progress_timecodes": [
+      "00:00:00:00",
+      "00:00:00:19",
+      "00:00:02:00"
+    ],
+    "saved_then_quit": true,
+    "cold_reopen_verified": false,
+    "export_verified": false
+  },
+  "screenshots": [
+    {
+      "name": "first-open.png",
+      "sha256": "fb7af167f313c419e95aac93e89e5fca9c9ce4dd890e7243544a03750368e279",
+      "published": false
+    },
+    {
+      "name": "play-complete.png",
+      "sha256": "837ffa95277445f496c1863da89b15475895d49015cc27935a830dde3c9c703e",
+      "published": false
+    }
+  ],
+  "subsequent_acceptance": {
+    "cold_reopen_verified": true,
+    "normal_ui_export_verified": true,
+    "actual_container": "MOV",
+    "evidence": "synthetic-ui-export-2026-10-23.json"
+  }
+}

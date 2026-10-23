@@ -60,9 +60,10 @@ def check():
     if supported:
         try:
             manifest = json.loads((ROOT / 'bridge/SOURCE_MANIFEST.json').read_text())
-            _, toolchain = select_toolchain(manifest['reproduction_environment'])
+            from codec_profiles import choose_build_profile
+            name, _, _, toolchain = choose_build_profile(select_toolchain)
             add('PASS', '已验工具链', toolchain['compiler'] + ' / SDK ' + toolchain['sdk_version']
-                + ' / linker ' + toolchain['linker'] + '；最终仍须校验编译产物')
+                + ' / linker ' + toolchain['linker'] + ' / ' + name + '；最终仍须校验编译产物')
         except (OSError, ValueError, KeyError, subprocess.SubprocessError) as error:
             # An already-verified codec does not need recompilation.
             add('WARN' if (ROOT / 'bridge/jy14_codec_hardened_11_4').is_file() else 'FAIL',

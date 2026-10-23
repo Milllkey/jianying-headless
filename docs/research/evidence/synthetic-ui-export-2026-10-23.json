@@ -1,0 +1,194 @@
+{
+  "schema": "jianying-headless-synthetic-ui-export-observation/v1",
+  "status": "independently-decoded-and-measured",
+  "source_synthetic_media_sha256": "1517cf151455e700a97d339f178b1eee3f879f2198fa6f1a5fb249d4c6902e2e",
+  "ui_export_sha256": "89f4a15e7664853c6ac7fdca30eb20ef2a8b8445b75d3fe5ae025db6b06f8c40",
+  "output_bytes": 762108,
+  "actual_file_extension": ".mov",
+  "actual_container_brand": "qt  ",
+  "requested_plan_extension": ".mp4",
+  "requested_mp4_selection_completed": false,
+  "extension_renamed": false,
+  "container_explanation": "The normal UI retained MOV; existing validator accepts QuickTime brand qt. This result does not prove MP4 selection automation.",
+  "full_decode_passed": true,
+  "video": {
+    "codec_name": "h264",
+    "width": 640,
+    "height": 360,
+    "avg_frame_rate": "30/1",
+    "nb_frames": "60",
+    "duration": "2.000000",
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "44100",
+    "channels": 2,
+    "duration": "1.996916",
+    "initial_padding": 2112
+  },
+  "official_verifier": {
+    "schema": "jy14-ui-export/v1",
+    "status": "encoded-and-decoded",
+    "full_decode_passed": true,
+    "live_draft_matched_build_before_export": "verified",
+    "live_draft_matched_build_after_export": "verified",
+    "source_files_unchanged": true,
+    "headless_native_export_used": false,
+    "published_to_any_platform": false
+  },
+  "official_verifier_sha256": "97e01c6d1e9a984866ee5ceef155ed92ccb885d03941f4d4f10f36779f35e962",
+  "frames": [
+    {
+      "frame": 0,
+      "time_seconds": 0.0,
+      "sha256": "d19692983a7244c0988ee53f09b5a728be75f59f0e01a8bbfe214d537aa706cb",
+      "file": "frame-000.png",
+      "published": false
+    },
+    {
+      "frame": 15,
+      "time_seconds": 0.5,
+      "sha256": "abdac60e5b58b4444b4c1c569ebb34f2b864c3cf8f20b24ff2da4f9684c75a24",
+      "file": "frame-015.png",
+      "published": false
+    },
+    {
+      "frame": 45,
+      "time_seconds": 1.5,
+      "sha256": "b6a9b140dbc50ec489b15e3b0a215416cf411688ea647d6eaab34c1661366b60",
+      "file": "frame-045.png",
+      "published": false
+    },
+    {
+      "frame": 59,
+      "time_seconds": 1.9666666666666666,
+      "sha256": "b070e33d71a9a8857e38e3352537a425b1ac48f17b42ed680a05c4a800ec2de0",
+      "file": "frame-059.png",
+      "published": false
+    }
+  ],
+  "audio_measurement_method": "Decode original and output to float PCM with native channel count/sample rate; Hann FFT 100-2000Hz with log-peak interpolation and positive zero crossings; steady windows exclude the cut. Per-channel RMS and channel-energy ratio shown separately.",
+  "audio_measurements": [
+    {
+      "window_start": 0.15,
+      "window_end": 0.85,
+      "sample_rate": 44100,
+      "samples_per_channel": 30870,
+      "channels": [
+        {
+          "fft_peak_hz": 439.9998663218246,
+          "positive_zero_crossing_hz": 440.0006944953965,
+          "rms": 0.018669205620863945,
+          "rms_dbfs": -34.57748321982403,
+          "peak": 0.027602868154644966,
+          "peak_dbfs": -31.1809157796969,
+          "samples_abs_ge_0999": 0
+        },
+        {
+          "fft_peak_hz": 439.9998663218246,
+          "positive_zero_crossing_hz": 440.0006944953965,
+          "rms": 0.018669205620863945,
+          "rms_dbfs": -34.57748321982403,
+          "peak": 0.027602868154644966,
+          "peak_dbfs": -31.1809157796969,
+          "samples_abs_ge_0999": 0
+        }
+      ],
+      "label": "normal-1x",
+      "source_window": {
+        "window_start": 0.15,
+        "window_end": 0.85,
+        "sample_rate": 48000,
+        "samples_per_channel": 33600,
+        "channels": [
+          {
+            "fft_peak_hz": 439.9999446760037,
+            "positive_zero_crossing_hz": 440.00091619655944,
+            "rms": 0.08817329692227785,
+            "rms_dbfs": -21.093258400581163,
+            "peak": 0.1299862116575241,
+            "peak_dbfs": -17.722054264423438,
+            "samples_abs_ge_0999": 0
+          }
+        ]
+      },
+      "configured_clip_volume": 0.3,
+      "output_per_channel_rms_over_source": [
+        0.21173310143228846,
+        0.21173310143228846
+      ],
+      "output_root_sum_square_rms_over_source": 0.29943582364886057
+    },
+    {
+      "window_start": 1.15,
+      "window_end": 1.85,
+      "sample_rate": 44100,
+      "samples_per_channel": 30870,
+      "channels": [
+        {
+          "fft_peak_hz": 439.98402291863005,
+          "positive_zero_crossing_hz": 439.98874205384925,
+          "rms": 0.018609623420230478,
+          "rms_dbfs": -34.60524830113601,
+          "peak": 0.02766299620270729,
+          "peak_dbfs": -31.16201565746909,
+          "samples_abs_ge_0999": 0
+        },
+        {
+          "fft_peak_hz": 439.98402291863005,
+          "positive_zero_crossing_hz": 439.98874205384925,
+          "rms": 0.018609623420230478,
+          "rms_dbfs": -34.60524830113601,
+          "peak": 0.02766299620270729,
+          "peak_dbfs": -31.16201565746909,
+          "samples_abs_ge_0999": 0
+        }
+      ],
+      "label": "second-1.5x",
+      "source_window": {
+        "window_start": 1.225,
+        "window_end": 2.275,
+        "sample_rate": 48000,
+        "samples_per_channel": 50400,
+        "channels": [
+          {
+            "fft_peak_hz": 439.99798706943574,
+            "positive_zero_crossing_hz": 440.0002570197838,
+            "rms": 0.08800969498677795,
+            "rms_dbfs": -21.109389682600735,
+            "peak": 0.13080859184265137,
+            "peak_dbfs": -17.66727459006583,
+            "samples_abs_ge_0999": 0
+          }
+        ]
+      },
+      "configured_clip_volume": 0.3,
+      "output_per_channel_rms_over_source": [
+        0.2114496979341455,
+        0.2114496979341455
+      ],
+      "output_root_sum_square_rms_over_source": 0.29903503057816283
+    }
+  ],
+  "audio_scope": "Only a synthetic 440Hz tone with configured volume 0.3; no general speech/music quality or all speed policies inferred.",
+  "cold_reopen": {
+    "observed_by": "root agent normal UI; screenshot independently viewed",
+    "passed": true,
+    "screenshot_sha256": "978eab87145378cbb7a52355d4aa9a30f4e79a0613e16a7a1f99984ce0f0b4de",
+    "screenshot_published": false
+  },
+  "live_files_written_by_analysis": false,
+  "native_headless_export_116_verified": false,
+  "visual_sample_review": {
+    "reviewed_frames": [
+      15,
+      45,
+      59
+    ],
+    "complete_chinese_text_visible": true,
+    "rotated_picture_in_picture_visible": true,
+    "native_sample_frames_match_observed_editor_content": true,
+    "pixel_identity_claimed": false
+  }
+}

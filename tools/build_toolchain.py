@@ -1,5 +1,6 @@
 """Select an exact reviewed Apple toolchain without changing xcode-select."""
 import json
+import hashlib
 import os
 from pathlib import Path
 import subprocess
@@ -54,8 +55,19 @@ def inspect(developer_dir, reproduction):
                 'deployment_target': reproduction['binary_minimum_macos']}
     normalized_compiler = compiler.replace('Apple clang version ', 'Apple clang ', 1)
     if (normalized_compiler != reproduction['compiler'] or sdk_version != reproduction['macos_sdk']
-            or linker != REVIEWED_LINKER or not Path(sdk_path).is_dir()):
+            or linker != reproduction.get('linker', REVIEWED_LINKER) or not Path(sdk_path).is_dir()):
         raise ValueError('Not the reviewed toolchain: ' + json.dumps(identity, ensure_ascii=False))
+    for name, tool in (('compiler_sha256', 'clang++'), ('linker_sha256', 'ld')):
+        if name in reproduction:
+            path = Path(run(['/usr/bin/xcrun', '--find', tool], env)).resolve(strict=True)
+            identity[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+            if identity[name] != reproduction[name]:
+                raise ValueError('Not the reviewed toolchain executable: ' + name)
+    if 'sdk_build' in reproduction:
+        identity['sdk_build'] = run(['/usr/bin/xcrun', '--sdk', sdk_name, '--show-sdk-build-version'], env)
+        identity['sdk_settings_sha256'] = hashlib.sha256((Path(sdk_path) / 'SDKSettings.json').read_bytes()).hexdigest()
+        if any(identity[name] != reproduction[name] for name in ('sdk_build', 'sdk_settings_sha256')):
+            raise ValueError('Not the reviewed SDK build/settings')
     return env, identity
 
 
@@ -67,7 +79,7 @@ def select_toolchain(reproduction, explicit=None):
         except (OSError, ValueError, KeyError, IndexError, subprocess.SubprocessError) as error:
             failures.append(str(path) + ': ' + str(error))
     raise ValueError('No exact reviewed toolchain found. Required: ' + reproduction['compiler']
-                     + ', SDK ' + reproduction['macos_sdk'] + ', linker ' + REVIEWED_LINKER
+                     + ', SDK ' + reproduction['macos_sdk'] + ', linker ' + reproduction.get('linker', REVIEWED_LINKER)
                      + '. Install a matching official Xcode/CLT, or select it with --developer-dir. '
                      'No system selection or runtime pin was changed.\n' + '\n'.join(failures))
 

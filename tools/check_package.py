@@ -127,7 +127,16 @@ def main():
     for name, expected in literal(runtime, 'PINS').items():
         if name == Path(LOCAL_CODEC).name and not (ROOT / LOCAL_CODEC).exists():
             continue
-        require(digest(ROOT / 'bridge' / name) == expected, 'Runtime IO/codec pin differs: ' + name)
+        require(digest(ROOT / 'bridge' / name) in (expected if isinstance(expected, tuple) else (expected,)), 'Runtime IO/codec pin differs: ' + name)
+    require(digest(ROOT / 'bridge/CODEC_PROFILES.json') == literal(ROOT / 'engine/codec_profiles.py', 'PROFILE_MANIFEST_SHA')
+            == literal(ROOT / 'bridge/runtime_io.py', 'CODEC_PROFILES_SHA256'), 'Codec profile registry pins differ')
+    codec_profiles = json.loads((ROOT / 'bridge/CODEC_PROFILES.json').read_bytes())['profiles']
+    require(set(literal(runtime, 'PINS')[Path(LOCAL_CODEC).name]) ==
+            {profile['codec_sha256'] for profile in codec_profiles.values()}, 'Reviewed codec build sets differ')
+    for profile in codec_profiles.values():
+        require((ROOT / profile['evidence']).is_file(), 'Codec build evidence is missing')
+        require(all(manifest['source_files'].get(name) == expected
+                    for name, expected in profile['source_files'].items()), 'Codec profile source differs')
     require(digest(ROOT / 'engine/native-resource-catalog.json') ==
             literal(ROOT / 'engine/native_resources.py', 'CATALOG_SHA'), 'Resource catalog pin differs')
 

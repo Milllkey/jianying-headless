@@ -1,0 +1,52 @@
+{
+  "schema": "jianying-headless-codec-profiles/v1",
+  "codec_filename": "jy14_codec_hardened_11_4",
+  "profiles": {
+    "legacy-clang-2100.1.1.101": {
+      "codec_sha256": "b6533eb5eb1eea58dfa74fb1d16d3bb580970fe881f587605d358af1745f971d",
+      "source_files": {
+        "jy14_codec.cpp": "982f2fbf0f394e0992f8e38305d17354e534c3b64489cd571c6a525f16489a2c",
+        "EncryptUtil.h": "8a5c4c6aabbd52c27ea9057bc230afb383a8784f1478a6f7894c478b12c50f62"
+      },
+      "reproduction_environment": {
+        "operating_system": "macOS 26.5.1 (25F80)",
+        "architecture": "arm64",
+        "compiler": "Apple clang 21.0.0 (clang-2100.1.1.101)",
+        "macos_sdk": "26.5",
+        "binary_minimum_macos": "26.0",
+        "linker": "1267"
+      },
+      "runtime_libraries": {
+        "11.6.0": "a490d9a08b71a2d9af138d24528d3d40d65b37b06911627c53a2915c6cac0754",
+        "11.5.0": "2041482a1aaeffa4d8bd69b836f8cf38807aaad8021bca410d567c59af3bccfa",
+        "11.4.2": "632c8ddd09ff4a54f876cd8142eb505055ee26d944199506b230949b7e106bd1",
+        "11.4.0": "a1693070036a6678bb5db35f71d2105812ad24a2370e7e91c78712cc0d6455f3"
+      },
+      "evidence": "docs/VERIFICATION.md",
+      "native_export_authorized": false
+    },
+    "clt-2100.3.34.2-sdk-25F70": {
+      "codec_sha256": "0502a5d22befff792f2b275f77309672141a7a5669dcb6abbb41b9815362c559",
+      "source_files": {
+        "jy14_codec.cpp": "982f2fbf0f394e0992f8e38305d17354e534c3b64489cd571c6a525f16489a2c",
+        "EncryptUtil.h": "8a5c4c6aabbd52c27ea9057bc230afb383a8784f1478a6f7894c478b12c50f62"
+      },
+      "reproduction_environment": {
+        "compiler": "Apple clang 21.0.0 (clang-2100.3.34.2)",
+        "macos_sdk": "26.5",
+        "binary_minimum_macos": "26.0",
+        "linker": "27037.1",
+        "compiler_sha256": "1590ac950a3d627817d09ade5cb60b2115f17a72182a3141e010b4bcc482a0c9",
+        "linker_sha256": "374d9f0713bce2c8a9e1e82bde51615d5433516a10d99b63107eb6ee70542e4c",
+        "sdk_build": "25F70",
+        "sdk_settings_sha256": "f8d005f09381389167f9e0aeaa169bc9e7dff162ef22ca2fd8e98df7ff1acafe",
+        "architecture": "arm64"
+      },
+      "runtime_libraries": {
+        "11.6.0": "a490d9a08b71a2d9af138d24528d3d40d65b37b06911627c53a2915c6cac0754"
+      },
+      "evidence": "docs/research/2026-10-23-codec-profile.md",
+      "native_export_authorized": false
+    }
+  }
+}

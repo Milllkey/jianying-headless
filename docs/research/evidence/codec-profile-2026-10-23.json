@@ -1,0 +1,458 @@
+{
+  "schema": "jianying-headless-reviewed-codec-evidence/v1",
+  "date": "2026-10-23",
+  "scope": "Own C++ helper linked to exact installed official library; synthetic codec ABI only",
+  "codec_profile": "clt-2100.3.34.2-sdk-25F70",
+  "source_files": {
+    "jy14_codec.cpp": "982f2fbf0f394e0992f8e38305d17354e534c3b64489cd571c6a525f16489a2c",
+    "EncryptUtil.h": "8a5c4c6aabbd52c27ea9057bc230afb383a8784f1478a6f7894c478b12c50f62"
+  },
+  "official_app": {
+    "version": "11.6.0",
+    "bundle_id": "com.lemon.lvpro",
+    "team_id": "X2JNK7LY8J",
+    "library_sha256": "a490d9a08b71a2d9af138d24528d3d40d65b37b06911627c53a2915c6cac0754",
+    "deep_strict_signature_verified": true
+  },
+  "toolchain": {
+    "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "compiler_sha256": "1590ac950a3d627817d09ade5cb60b2115f17a72182a3141e010b4bcc482a0c9",
+    "sdk_version": "26.5",
+    "sdk_build": "25F70",
+    "sdk_settings_sha256": "f8d005f09381389167f9e0aeaa169bc9e7dff162ef22ca2fd8e98df7ff1acafe",
+    "linker": "27037.1",
+    "linker_sha256": "374d9f0713bce2c8a9e1e82bde51615d5433516a10d99b63107eb6ee70542e4c",
+    "deployment_target": "26.0"
+  },
+  "candidate_builds": [
+    {
+      "run": 1,
+      "sha256": "0502a5d22befff792f2b275f77309672141a7a5669dcb6abbb41b9815362c559",
+      "warnings_present": false,
+      "signature_verified": true,
+      "signature_kind": "adhoc,linker-signed",
+      "architecture": "arm64",
+      "bytes": 59240
+    },
+    {
+      "run": 2,
+      "sha256": "0502a5d22befff792f2b275f77309672141a7a5669dcb6abbb41b9815362c559",
+      "warnings_present": false,
+      "signature_verified": true,
+      "signature_kind": "adhoc,linker-signed",
+      "architecture": "arm64",
+      "bytes": 59240
+    }
+  ],
+  "candidate_reproduced": true,
+  "link_flags": [
+    "-std=c++17",
+    "-arch arm64",
+    "-O2",
+    "-mmacosx-version-min=26.0",
+    "-lvideoeditor",
+    "official-framework-directory-rpath"
+  ],
+  "dependencies": [
+    "@rpath/libvideoeditor.dylib",
+    "/usr/lib/libc++.1.dylib",
+    "/usr/lib/libSystem.B.dylib"
+  ],
+  "prior_failures": [
+    {
+      "kind": "legacy-toolchain-selection",
+      "result": "refused",
+      "reason": "Legacy requires clang-2100.1.1.101/linker1267; local CLT is clang-2100.3.34.2/linker27037.1. Installed Xcode candidate lacks the required SDK."
+    },
+    {
+      "kind": "deny-default-sandbox-startup",
+      "result": "failed-before-codec-work",
+      "reason": "Simple owned-file /bin/cat probe also aborted with signal 6. No native success claimed from these attempts."
+    }
+  ],
+  "candidate_probe": {
+    "status": "synthetic-probe-passed",
+    "cases": [
+      {
+        "name": "owned-file-read",
+        "exit_code": 0
+      },
+      {
+        "name": "encrypt",
+        "exit_code": 0
+      },
+      {
+        "name": "decrypt",
+        "exit_code": 0
+      },
+      {
+        "name": "encrypt-fd",
+        "exit_code": 0
+      },
+      {
+        "name": "decrypt-fd",
+        "exit_code": 0
+      },
+      {
+        "name": "large-file-encrypt",
+        "exit_code": 0
+      },
+      {
+        "name": "large-file-decrypt",
+        "exit_code": 0
+      },
+      {
+        "name": "oversized-input-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "directory-input-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "encrypt-wrong-fd-direction",
+        "exit_code": 1
+      },
+      {
+        "name": "decrypt-wrong-fd-direction",
+        "exit_code": 1
+      },
+      {
+        "name": "empty-encrypt-pipe-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "overwrite-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "input-symlink-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "output-symlink-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "parent-symlink-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "empty-cipher-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "invalid-cipher-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "truncated-cipher-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "stdout-fd-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "regular-fd-refused",
+        "exit_code": 1
+      },
+      {
+        "name": "outside-user-read-denied",
+        "exit_code": 1
+      },
+      {
+        "name": "outside-write-denied",
+        "exit_code": 1
+      },
+      {
+        "name": "loopback-network-denied",
+        "exit_code": 7
+      }
+    ],
+    "roundtrip": {
+      "source_sha256": "0b2494aa155a2dd44f119c28ca713b7b089400e0440439e5a90194ed9be92227",
+      "cipher_sha256": "773419105ecedaab7dfc6ffb0e38c1f713528050591bc39d2029140f803decc4",
+      "decoded_sha256": "0b2494aa155a2dd44f119c28ca713b7b089400e0440439e5a90194ed9be92227",
+      "cipher_differs": true,
+      "decoded_matches": true,
+      "output_mode": "0o600"
+    },
+    "pipe_roundtrip_matches": true,
+    "large_roundtrip": {
+      "bytes": 480013,
+      "sha256": "71e61b5a8f75edec35bc75e4e752f8c99930e67aadac6b67e63577a36ee1ce24",
+      "decoded_matches": true
+    }
+  },
+  "sandbox_scope": {
+    "network_permitted": false,
+    "private_user_file_reads_permitted": false,
+    "writes_limited_to_job": true,
+    "system_ipc_restricted": false,
+    "default_policy": "allow, with explicit file-data/network restrictions",
+    "directory_traversal": "Exact ancestor directory reads, not recursive data grants",
+    "caveat": "This is a file/network-constrained synthetic probe, not a complete hostile-process containment sandbox."
+  },
+  "native_headless_render_116_verified": false,
+  "official_library_distributed": false,
+  "official_app_modified": false,
+  "private_drafts_read": false,
+  "account_data_read": false,
+  "binary_artifacts_tracked": false,
+  "integrated_verifier": {
+    "schema": "jianying-headless-codec-probe/v1",
+    "status": "synthetic-probe-passed",
+    "codec_sha256": "0502a5d22befff792f2b275f77309672141a7a5669dcb6abbb41b9815362c559",
+    "codec_build_profile": "clt-2100.3.34.2-sdk-25F70",
+    "app_version": "11.6.0",
+    "library_sha256": "a490d9a08b71a2d9af138d24528d3d40d65b37b06911627c53a2915c6cac0754",
+    "codec_profile_manifest_sha256": "ba943c1203a7fac988817ef125fcdb9dd094ee9000f64236120cba1594e08cc4",
+    "source_files": {
+      "jy14_codec.cpp": "982f2fbf0f394e0992f8e38305d17354e534c3b64489cd571c6a525f16489a2c",
+      "EncryptUtil.h": "8a5c4c6aabbd52c27ea9057bc230afb383a8784f1478a6f7894c478b12c50f62"
+    },
+    "source_and_runtime_unchanged_after_probe": true,
+    "official_signature_verified": true,
+    "synthetic_only": true,
+    "pipe_roundtrip_matches": true,
+    "roundtrip": {
+      "source_sha256": "0b2494aa155a2dd44f119c28ca713b7b089400e0440439e5a90194ed9be92227",
+      "cipher_sha256": "72536248d50948fe808abf8838e9f614be8f3d1131d9dd6fce715ba052af69b4",
+      "decoded_sha256": "0b2494aa155a2dd44f119c28ca713b7b089400e0440439e5a90194ed9be92227",
+      "cipher_differs": true,
+      "decoded_matches": true,
+      "output_mode": "0o600"
+    },
+    "large_roundtrip": {
+      "bytes": 480013,
+      "sha256": "71e61b5a8f75edec35bc75e4e752f8c99930e67aadac6b67e63577a36ee1ce24",
+      "decoded_matches": true
+    },
+    "cases": [
+      {
+        "name": "owned-file-read",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "encrypt",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "decrypt",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "encrypt-fd",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "decrypt-fd",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "large-file-encrypt",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "large-file-decrypt",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "oversized-input-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "directory-input-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "encrypt-wrong-fd-direction",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "decrypt-wrong-fd-direction",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "empty-encrypt-pipe-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "overwrite-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "input-symlink-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "output-symlink-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "parent-symlink-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "empty-cipher-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "invalid-cipher-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "truncated-cipher-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "stdout-fd-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "regular-fd-refused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "outside-user-read-denied",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "outside-write-denied",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "name": "loopback-network-denied",
+        "exit_code": 7,
+        "expected_exit_code": 7,
+        "passed": true
+      }
+    ]
+  },
+  "integrated_builds": [
+    {
+      "status": "built-and-verified",
+      "codec_build_profile": "clt-2100.3.34.2-sdk-25F70",
+      "sha256": "0502a5d22befff792f2b275f77309672141a7a5669dcb6abbb41b9815362c559"
+    },
+    {
+      "status": "reproduced-and-verified",
+      "codec_build_profile": "clt-2100.3.34.2-sdk-25F70",
+      "sha256": "0502a5d22befff792f2b275f77309672141a7a5669dcb6abbb41b9815362c559"
+    }
+  ],
+  "offline_tests": {
+    "command": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "tests": 223,
+    "passed": 223,
+    "failed": 0,
+    "scope": "Offline regressions, including local filesystem and FFmpeg; no editor codec or render library is invoked by these unit tests."
+  },
+  "package_source_check": "passed",
+  "synthetic_full_draft": {
+    "status": "synthetic-build-verified",
+    "timeline_schema": "185.0.0",
+    "runtime_profile": "jy14-headless-macos-11.6.0",
+    "canvas": {
+      "width": 640,
+      "height": 360,
+      "fps": 30
+    },
+    "duration_us": 2000000,
+    "tracks": [
+      {
+        "type": "video",
+        "segments": 2
+      },
+      {
+        "type": "video",
+        "segments": 1
+      },
+      {
+        "type": "text",
+        "segments": 1
+      }
+    ],
+    "features": [
+      "video trim",
+      "constant 1.5x speed",
+      "video audio volume 0.3",
+      "picture in picture scale/rotation/position",
+      "text"
+    ],
+    "synthetic_media_sha256": "1517cf151455e700a97d339f178b1eee3f879f2198fa6f1a5fb249d4c6902e2e",
+    "built_files": 17,
+    "media_files": 1,
+    "source_unchanged": true,
+    "draft_registered": false,
+    "native_ui_checked": false,
+    "native_headless_export_run": false,
+    "draft_metadata_codec_roundtrips_passed": true,
+    "all_active_timeline_mirrors_equal": true,
+    "build_manifest_sha256": "7d55441be6e82947166031f7840b36491072d248667f0671908055e59e5bd1d0",
+    "plan_sha256": "8863e64da7d51a546063108b7e615d60c38241e832735fb99e2b62e371d2f256",
+    "stage": "offline build before subsequent normal UI registration"
+  },
+  "ui_acceptance_of_new_build": {
+    "new_test_draft_registered_by_root": true,
+    "first_open_and_playback_verified": true,
+    "saved_and_quit": true,
+    "first_save_readback_verified": true,
+    "schema_upgrade": "185.0.0 -> 189.0.0",
+    "cold_reopen_verified": true,
+    "ui_export_verified": true,
+    "first_save_evidence": "synthetic-ui-first-save-2026-10-23.json",
+    "native_headless_export_verified": false,
+    "actual_export_container": "MOV",
+    "requested_mp4_selection_completed": false,
+    "ui_export_evidence": "synthetic-ui-export-2026-10-23.json",
+    "official_export_sha256": "89f4a15e7664853c6ac7fdca30eb20ef2a8b8445b75d3fe5ae025db6b06f8c40"
+  }
+}

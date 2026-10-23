@@ -52,7 +52,7 @@ def component_readiness(backend=BACKEND, manifest_sha=IO_MANIFEST_SHA, pins=None
                 if not all(identity(item) == identity(initial) for item in (opened, finished, final)):
                     entry['status'] = 'changed-during-inspection'
                 else:
-                    entry['status'] = ('matched' if entry['actual_sha256'] == expected
+                    entry['status'] = ('matched' if entry['actual_sha256'] in (expected if isinstance(expected, tuple) else (expected,))
                                        else 'hash-mismatch')
         except FileNotFoundError:
             entry['status'] = 'missing'

@@ -3,6 +3,8 @@
 Mechanically extracted from the project's 11.4 IO helper; registered-sound
 operations, bookmarks, account-specific constants and the legacy CLI are not
 included. The official engine remains an external local dependency.
+The codec gate now uses exact reviewed build/library pairs; the original
+single-build fingerprint remains recorded as historical provenance.
 """
 
 from __future__ import annotations
@@ -14,6 +16,7 @@ import hashlib
 import json
 
 import os
+import plistlib
 
 import stat
 
@@ -30,6 +33,7 @@ from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
 REQUIRED_CODEC_SHA256 = (
     "b6533eb5eb1eea58dfa74fb1d16d3bb580970fe881f587605d358af1745f971d"
 )
+CODEC_PROFILES_SHA256 = "ba943c1203a7fac988817ef125fcdb9dd094ee9000f64236120cba1594e08cc4"
 
 APP_BUNDLE = Path("/Applications/VideoFusion-macOS.app")
 
@@ -262,6 +266,41 @@ def _tool_pin(path: Path, expected_sha256: str, label: str) -> None:
     if not os.access(path, os.X_OK) and label == "codec":
         raise ApplyError("codec is not executable")
 
+def _reviewed_codec_pin() -> None:
+    """Accept only exact reviewed builds paired with their observed editor ABI."""
+    raw, _, _ = _read_regular_bytes(WORK_DIR / "CODEC_PROFILES.json", "codec profiles", max_bytes=65536)
+    if hashlib.sha256(raw).hexdigest() != CODEC_PROFILES_SHA256:
+        raise ApplyError("codec profile manifest changed")
+    manifest = _parse_strict_json(raw, "codec profiles")
+    if manifest.get("schema") != "jianying-headless-codec-profiles/v1":
+        raise ApplyError("unexpected codec profile manifest")
+    actual = _hash_file(CODEC_PATH, "codec")
+    matches = [p for p in manifest["profiles"].values() if p["codec_sha256"] == actual]
+    if len(matches) != 1 or not os.access(CODEC_PATH, os.X_OK):
+        raise ApplyError("codec is not an executable reviewed build")
+    data, _, _ = _read_regular_bytes(APP_BUNDLE / "Contents/Info.plist", "editor identity", max_bytes=1048576)
+    info = plistlib.loads(data); version = info.get("CFBundleShortVersionString")
+    expected = matches[0]["runtime_libraries"].get(version)
+    if not expected or info.get("CFBundleVersion") != version or info.get("CFBundleIdentifier") != "com.lemon.lvpro":
+        raise ApplyError("codec build has no reviewed ABI for this editor")
+    library = APP_BUNDLE / "Contents/Frameworks/libvideoeditor.dylib"
+    fd, opened, parent_identity = _open_regular_readonly(library, "editor library", max_bytes=None)
+    digest = hashlib.sha256()
+    try:
+        while True:
+            block = os.read(fd, READ_CHUNK_SIZE)
+            if not block: break
+            digest.update(block)
+        if _metadata_identity(os.fstat(fd)) != _metadata_identity(opened):
+            raise ApplyError("editor library changed while hashing")
+        if (_metadata_identity(library.lstat()) != _metadata_identity(opened)
+                or _directory_identity(library.parent, "editor library parent") != parent_identity):
+            raise ApplyError("editor library path changed while hashing")
+    finally:
+        os.close(fd)
+    if digest.hexdigest() != expected:
+        raise ApplyError("editor library differs from the reviewed codec ABI")
+
 def _process_rows() -> List[Tuple[int, str]]:
     try:
         result = subprocess.run(
@@ -309,7 +348,7 @@ def _safe_environment() -> Dict[str, str]:
 def _decrypt_metadata_in_memory(encrypted_path: Path) -> JsonObject:
     """Decrypt metadata through a pipe; plaintext never receives a pathname."""
 
-    _tool_pin(CODEC_PATH, REQUIRED_CODEC_SHA256, "codec")
+    _reviewed_codec_pin()
     read_fd, write_fd = os.pipe()
     chunks: List[bytes] = []
     read_error: List[BaseException] = []
@@ -371,7 +410,7 @@ def _encrypt_metadata_from_memory(plaintext: bytes, encrypted_path: Path) -> Non
 
     if not plaintext or len(plaintext) > MAX_METADATA_PLAINTEXT_BYTES:
         raise ApplyError("metadata plaintext size is invalid")
-    _tool_pin(CODEC_PATH, REQUIRED_CODEC_SHA256, "codec")
+    _reviewed_codec_pin()
     read_fd, write_fd = os.pipe()
     write_error: List[BaseException] = []
 
