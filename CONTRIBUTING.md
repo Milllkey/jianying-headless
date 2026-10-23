@@ -22,4 +22,6 @@ python3 skills/agent-jianying-edit/scripts/headless_draft.py doctor
 
 主仓 0.8 增加静态旋转、有界纯色文字样式、显式字体绑定，以及仅适用于 native 189 的可选字号经验 profile。字号近似、字体实际字面未知、多行行距、不同描边定义及源帧采样差异均保留报告。两档文字与四档恒速校准使用自制素材；结果仅适用于各报告的范围。详见主仓 `integrations/jianying/CONTRACT.md` 和 `docs/research/`。
 
+主仓 0.9 增加显式 `sourceFrameSampling:'jianying-11.6-cfr30-floor-v1'` 导入选项，并由独立渲染器重新核验真实源视频的逐帧时钟。范围限定为11.6保存的189明文、源/工程30fps、源入点0及0.75/1.25/1.5/1.75倍。自制120帧对照的源帧索引全部吻合官方导出；旧默认输出的59帧差异与原始报告仍保留。该结果不能推广为所有画面像素或其他速度/帧率等价，也不能把调用方提供的时钟JSON当成已读取文件。新报告见 [显式采样验证](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/JIANYING-CFR-FLOOR-OPT-IN-VALIDATION.md)。
+
 继续改动时，把具体问题分成草稿数据、实际保存结果、实际导出画面/声音三层验收。保留输入摘要、参数、应用版本、完整解码和字段差异。通过离线测试不等于原生应用质量一致。
