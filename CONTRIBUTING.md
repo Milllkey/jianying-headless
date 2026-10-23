@@ -24,4 +24,6 @@ python3 skills/agent-jianying-edit/scripts/headless_draft.py doctor
 
 主仓 0.9 增加显式 `sourceFrameSampling:'jianying-11.6-cfr30-floor-v1'` 导入选项，并由独立渲染器重新核验真实源视频的逐帧时钟。范围限定为11.6保存的189明文、源/工程30fps、源入点0及0.75/1.25/1.5/1.75倍。自制120帧对照的源帧索引全部吻合官方导出；旧默认输出的59帧差异与原始报告仍保留。该结果不能推广为所有画面像素或其他速度/帧率等价，也不能把调用方提供的时钟JSON当成已读取文件。新报告见 [显式采样验证](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/JIANYING-CFR-FLOOR-OPT-IN-VALIDATION.md)。
 
+主仓 0.10 增加实际源帧提取、带回执的素材发布、有界单视频定格插入和静态源裁切。同一有声自制素材在第1秒插入3秒定格，原生与独立引擎的180个输出源帧索引全部一致；AAC切点附近残留和音频尾长不同，见 [定格插入](https://github.com/Milllkey/haoyong-video/blob/main/docs/FREEZE-INSERTION.md)。另有两组原生裁切导出，每组90帧核验，见 [裁切研究](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/NATIVE-CROP-VALIDATION-11.6.md)。自有裁切按源像素整数边界执行，原生浮点纹理采样仍有未解释残差；互转里的原生crop损失报告继续保留，不能直接删除警告或推定两种坐标算法等价。本仓本轮仅同步接手文档，原生桥与无界面导出支持范围未扩大。
+
 继续改动时，把具体问题分成草稿数据、实际保存结果、实际导出画面/声音三层验收。保留输入摘要、参数、应用版本、完整解码和字段差异。通过离线测试不等于原生应用质量一致。
