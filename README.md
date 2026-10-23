@@ -2,6 +2,8 @@
 
 剪映专业版的本地自动化工具：生成可编辑草稿、修改多轨工程副本，并通过本机引擎导出 MP4。
 
+开发交接入口：[AGENTS.md](AGENTS.md)、[CLAUDE.md](CLAUDE.md)、[贡献说明](CONTRIBUTING.md)。自有剪辑引擎、模型任务和画布接入集中在 [haoyong-video](https://github.com/Milllkey/haoyong-video)，本仓保留原生草稿互通职责。
+
 ## 功能
 
 - 视频分段、多轨组合、变速、音量、画中画、字幕和标题。
