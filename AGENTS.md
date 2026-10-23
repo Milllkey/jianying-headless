@@ -2,6 +2,8 @@
 
 This repository is the native-draft interoperability companion to [Haoyong Video](https://github.com/Milllkey/haoyong-video). Read `README.md`, `docs/GETTING-STARTED.md`, `docs/VERIFICATION.md` and the relevant plan/export reference before changing behavior.
 
+Current product priority is the existing canvas video-node workflow. Keep this native bridge optional; ordinary canvas rendering belongs in Haoyong Video and does not require the official app. Preserve known research and deferred work without expanding native parity experiments unless a concrete canvas requirement needs them.
+
 - Inspect the current Git status and preserve unrelated changes. Work on a separate checkout when another task owns the same files.
 - Preserve exact application, library and codec identity checks. A successful local experiment does not authorize weakening a version/profile/hash guard.
 - Jianying 11.6 supports the validated build/edit/publish subset and normal official UI export. Native headless export is a separate unsupported ABI path. Do not claim UI export proves headless export.

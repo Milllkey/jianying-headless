@@ -1,5 +1,7 @@
 # 从 GitHub 接手
 
+当前优先级为[现有画布的视频节点接入](https://github.com/Milllkey/haoyong-video/blob/main/docs/CANVAS-HANDOFF.md)，原生桥保留按需交接。0.17 的 `clips[].audioGainWindow` 是自有原声音量 v2，与独立音轨 v1 分开；保留视觉淡化和明确声音窗口。互转遇到声音历史、捕获增益及未映射蒙版时继续报告损失并拒绝，不转换成未经验证的原生字段。本次仅同步交接文档，未改动本仓原生实现或扩大无界面导出支持。
+
 本仓负责本机剪映草稿构建、独立副本编辑、组件核验、发布与导出交接。自有多轨渲染、字幕对齐、模型任务及画布接口在 [haoyong-video](https://github.com/Milllkey/haoyong-video)。两仓通过计划和明确的转换损失报告衔接，不能把原生私有字段默认为自有引擎已实现的能力。
 
 先按 [入门教程](docs/GETTING-STARTED.md) 准备 Python、FFmpeg、匹配的官方应用和本地桥接组件；仓库不会附带官方应用、模型权重或用户素材。克隆源码后首先运行 doctor，按明确缺项处理；不要通过放宽固定哈希来通过体检。

@@ -4,7 +4,7 @@
 
 开发交接入口：[AGENTS.md](AGENTS.md)、[CLAUDE.md](CLAUDE.md)、[贡献说明](CONTRIBUTING.md)。自有剪辑引擎、模型任务和画布接入集中在 [haoyong-video](https://github.com/Milllkey/haoyong-video)，本仓保留原生草稿互通职责。
 
-主仓 0.16 新增音量函数保形、可调合成蒙版与单次声音预处理缓存；已有声音历史、压低关系复制继续保留。[贡献说明](CONTRIBUTING.md)记录完整工程和成片交接方式；原生草稿转换及无界面导出仍以本仓已验证合同为准。
+主仓 0.17 优先服务现有画布的视频节点，新增画面原声音量函数、连接层来源校验和导出修订保护。接入顺序见[画布交接](https://github.com/Milllkey/haoyong-video/blob/main/docs/CANVAS-HANDOFF.md)；本仓作为可选的原生草稿交接，普通画布导出不依赖剪映。已有声音历史、可调合成蒙版和缓存继续保留。[贡献说明](CONTRIBUTING.md)记录完整工程和成片交接方式；原生草稿转换及无界面导出仍以本仓已验证合同为准。
 
 ## 功能
 
