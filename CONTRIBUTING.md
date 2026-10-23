@@ -44,3 +44,15 @@ python3 skills/agent-jianying-edit/scripts/headless_draft.py doctor
 [联动调色研究](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/NATIVE-COLOR-LINKED-11.6.md)另完成8份官方导出、480帧及固定数学假设比较。链条按钮本身未改变已保存曲线，联动拖动后的L/R/G/B锚点及跨通道输出有实际证据。共同亮度补偿候选仍有非零残差，不能据此确认原厂内部顺序。调色、HSL、色轮、蒙版等[扩展登记](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/NATIVE-COLOR-EXPANDED-REGISTER-11.6.md)包含147条控件/参数/行为子记录，按UI、保存状态和实际导出区分；不是147项已实现功能。本仓只更新这次交接文档，未扩大原生桥和无界面导出ABI范围。
 
 随后完成的[HSL四带研究](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/NATIVE-HSL-11.6.md)包含16份官方输出、960帧及60帧源对照，记录色带重叠、不同增益、同终态的两种黄绿操作顺序和92组固定数学比较。逐帧字节仍不同，静态色卡的输出帧间变化尚未隔离原因。40行参数/控制/静态声明子登记包含12个已测单值单元与其余未验证项，不与此前147行相加，不表示独立产品已经实现HSL或桥接可以无损转换。
+
+
+主仓0.16新增[音量函数保形](https://github.com/Milllkey/haoyong-video/blob/main/docs/AUDIO-GAIN-WINDOW.md)、[可调合成蒙版](https://github.com/Milllkey/haoyong-video/blob/main/docs/ADJUSTABLE-MASKS.md)与[单次声音历史PCM缓存](https://github.com/Milllkey/haoyong-video/blob/main/docs/AUDIO-HISTORY-PCM-CACHE.md)。`audio[].audioGainWindow`先绑定声音历史再显式捕获，分割/内裁保留原函数样本窗口；对象蒙版支持四种静态形状及羽化等参数。二者须经主仓完整工程HTTP/SDK保存和导出，不能直接解释为原生字段。互转的`AUDIO_GAIN_WINDOW_UNSUPPORTED`及蒙版`UNMAPPED_FIELD`损失继续保留并默认拒绝，不能静默丢掉参数。
+
+[同工程真实验收](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/CREATIVE-PRESERVATION-INTEGRATION-0.16.md)覆盖裁切、RGB、蒙版、动画、声音历史、增益根与无关v2压低关系，分割、内裁、检查点与再次复制的保留区间逐字节一致。它证明记录的自有渲染场景，不表示原生像素/声音或所有格式等价。新PCM缓存位于增益之前，仅本次多分段导出复用，未知处理器或输入格式仍走原图；不把私有缓存文件当成素材或工程迁移依赖。
+
+需要向原生侧交接这些效果时，保留完整自有工程；另外明确导出新媒体，以新素材身份导入原生草稿。渲染后媒体能够交接，不代表原参数仍可在原生侧独立编辑。下一步继续验证原生参数映射、视觉/音频时钟及实际原生输出，再调整相应损失合同。
+
+
+[静态色卡的时间对照](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/NATIVE-COLOR-TEMPORAL-CONTROL-11.6.md)继续追查HSL研究中的帧间波动：新增3份官方导出、180帧，以及固定YUV输入的无损/有损编码控制。源内部色块恒定，PNG单图仍波动，相同timeline重复导出只有第6帧像素不同。公开有损编码链路已能产生波动，但未证明剪映实际编码器、参数或编码前图像；旧16份HSL输出保留。下一步原生低损设置与编码前观测仍登记，不把误差自动归为某一内部算法。
+
+0.16发布后补充的[原生导出质量目录](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/NATIVE-EXPORT-QUALITY-11.6.md)逐项保留7类36个菜单标签、22条周边控件及路由负例。本轮0次新导出，ProRes/Alpha/PCM、8K/120fps、分数帧率与码率选择尚未实际验收；本仓原生桥和主仓导出规格均不因此扩大。

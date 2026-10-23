@@ -4,7 +4,7 @@
 
 开发交接入口：[AGENTS.md](AGENTS.md)、[CLAUDE.md](CLAUDE.md)、[贡献说明](CONTRIBUTING.md)。自有剪辑引擎、模型任务和画布接入集中在 [haoyong-video](https://github.com/Milllkey/haoyong-video)，本仓保留原生草稿互通职责。
 
-主仓 0.15 的声音处理历史、保留音乐压低的本机复制及静态蒙版缓存已在[贡献说明](CONTRIBUTING.md)说明交接方式；这些独立引擎协议不自动扩大本仓原生草稿或无界面导出支持。
+主仓 0.16 新增音量函数保形、可调合成蒙版与单次声音预处理缓存；已有声音历史、压低关系复制继续保留。[贡献说明](CONTRIBUTING.md)记录完整工程和成片交接方式；原生草稿转换及无界面导出仍以本仓已验证合同为准。
 
 ## 功能
 
@@ -49,14 +49,17 @@ python3 skills/agent-jianying-edit/scripts/headless_draft.py publish \
   --build "$PWD/work/new-build" --audit "$PWD/work/new-publish-audit"
 ```
 
-打开草稿检查画面、声音和保存结果。需要 MP4 时：
+打开草稿检查画面、声音和保存结果。导出方式取决于实际版本：
+
+- **剪映11.6.0**：使用[官方界面导出与核验](docs/UI-EXPORT.md)。先生成 `ui-export plan`，按照计划在剪映正常导出，再运行 `ui-export verify` 检查真实文件。此版本的 `export` 命令会明确拒绝；UI导出不是无界面导出ABI。
+- **已核验的11.5.0或11.4.2运行环境**：可执行以下原生无界面导出，版本与库身份检查仍须全部通过。
 
 ```bash
 python3 skills/agent-jianying-edit/scripts/headless_draft.py export \
   --build "$PWD/work/new-build" --out "$PWD/work/new-export"
 ```
 
-输出为 `render.mp4`。输出目录需使用新路径。
+上述无界面路线输出 `render.mp4`，输出目录需使用新路径；11.6界面路线使用计划记录的路径。
 
 ## 文档
 
