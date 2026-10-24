@@ -1,5 +1,7 @@
 # 从 GitHub 接手
 
+2026-10-24 研究资料统一到主仓[Claude 研究交接](https://github.com/Milllkey/haoyong-video/blob/main/docs/CLAUDE-RESEARCH-HANDOFF.md)，包含完整已登记功能索引、九类核心接口、原生专题映射及未验证范围。本仓仅同步阅读入口，不扩大原生版本/导出支持；下文各历史版本说明仍以对应合同为准。
+
 用户于 2026-10-23 明确：本任务交付本仓与 `haoyong-video` 的可复用能力、接口、实测与说明；具体融入画布产品由 Claude 决定和实施，不在本任务中修改或修复画布。优先准备有实际复用价值的能力并节省研究成本，原生桥保留按需交接，见[给 Claude 的能力交接](https://github.com/Milllkey/haoyong-video/blob/main/docs/CANVAS-HANDOFF.md)。0.17 的 `clips[].audioGainWindow` 是自有原声音量 v2，与独立音轨 v1 分开；保留视觉淡化和明确声音窗口。互转遇到声音历史、捕获增益及未映射蒙版时继续报告损失并拒绝，不转换成未经验证的原生字段。本次仅同步交接文档，未改动本仓原生实现或扩大无界面导出支持。
 
 本仓负责本机剪映草稿构建、独立副本编辑、组件核验、发布与导出交接。自有多轨渲染、字幕对齐、模型任务及画布接口在 [haoyong-video](https://github.com/Milllkey/haoyong-video)。两仓通过计划和明确的转换损失报告衔接，不能把原生私有字段默认为自有引擎已实现的能力。
