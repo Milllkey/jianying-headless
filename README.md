@@ -1,10 +1,12 @@
 # Jianying Headless
 
-剪映专业版的本地自动化工具：生成可编辑草稿、修改多轨工程副本，并通过本机引擎导出 MP4。
+剪映专业版的本地自动化工具：生成可编辑草稿、修改多轨工程副本，并在已验证的支持版本下通过本机引擎导出 MP4。11.6 的正常界面导出与原生无界面导出分别验收，支持范围见下方环境说明。
 
 开发交接入口：[AGENTS.md](AGENTS.md)、[CLAUDE.md](CLAUDE.md)、[贡献说明](CONTRIBUTING.md)。自有剪辑引擎、模型任务和画布接入集中在 [haoyong-video](https://github.com/Milllkey/haoyong-video)，本仓保留原生草稿互通职责。
 
 新增的[11.6 随包客户端拆解](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/BUNDLED-CLIENT-11.6.md)集中整理 714 文件元数据、17 份 Skill、43 条命令及参数和业务脚本的 REA 记录。画布节点协议、XML 时间线写入、原生草稿互通分别标注；这些静态资料不扩大本仓已验证的运行范围。
+
+接手原生互通前，另读[字幕与源时间映射](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/APP-SUBTITLE-TIMELINE-11.6.md)、[时间线参数](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/APP-TIMELINE-EDITING-11.6.md)和[任务／导出桥](https://github.com/Milllkey/haoyong-video/blob/main/docs/research/APP-TIMELINE-BRIDGE-11.6.md)。它们记录固定包的静态调用合同：展示投影可能被截取，任务身份可能只在进程内保留，取消请求也不自动证明原生调用已终止；不能据此绕过本仓版本校验或宣称 11.6 无界面导出已支持。
 
 剪映 11.6 研究与主仓 0.25 独立能力从[统一交接入口](https://github.com/Milllkey/haoyong-video/blob/main/docs/CLAUDE-RESEARCH-HANDOFF.md)开始，按功能查看证据、接口和未知项；[独立 GIF 导出](https://github.com/Milllkey/haoyong-video/blob/main/docs/GIF-EXPORT.md)、[本地人声／伴奏、四轨分离](https://github.com/Milllkey/haoyong-video/blob/main/docs/AUDIO-SEPARATION.md)与[补帧／慢动作](https://github.com/Milllkey/haoyong-video/blob/main/docs/FRAME-INTERPOLATION.md)以及[本地防抖与安全裁剪](https://github.com/Milllkey/haoyong-video/blob/main/docs/VIDEO-STABILIZATION.md)均在主仓。0.24 的[镜头边界分析](https://github.com/Milllkey/haoyong-video/blob/main/docs/SHOT-DETECTION.md)提供源时间绑定的切点候选与歧义记录。0.25 的[节拍分析](https://github.com/Milllkey/haoyong-video/blob/main/docs/RHYTHM-ANALYSIS.md)和[人声保护切点规划](https://github.com/Milllkey/haoyong-video/blob/main/docs/RHYTHM-CUT-PLANNING.md)提供待复核的节奏与切点建议，不自动修改时间线。Claude 负责后续画布产品集成；本仓提供可选原生草稿交接，独立导出不依赖剪映。11.6 已验证的构建、独立副本编辑、发布和正常 UI 导出，与尚未支持的原生无界面导出 ABI 分开。详见[贡献说明](CONTRIBUTING.md)。
 
