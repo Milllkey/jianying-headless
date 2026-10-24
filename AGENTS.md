@@ -2,7 +2,7 @@
 
 This repository is the native-draft interoperability companion to [Haoyong Video](https://github.com/Milllkey/haoyong-video). Read `README.md`, `docs/GETTING-STARTED.md`, `docs/VERIFICATION.md` and the relevant plan/export reference before changing behavior.
 
-Current product priority is the existing canvas video-node workflow. Keep this native bridge optional; ordinary canvas rendering belongs in Haoyong Video and does not require the official app. Preserve known research and deferred work without expanding native parity experiments unless a concrete canvas requirement needs them.
+Current task boundary (user clarification, 2026-10-23): improve and validate reusable capabilities in this repository and Haoyong Video; Claude owns the later canvas-product integration. This research task must not edit or repair haoyongcanvas-v2, merge its prior PR, or deploy it. Provide explicit interface limits, standalone evidence and handoff notes. Keep this native bridge optional; ordinary independent rendering belongs in Haoyong Video and does not require the official app. Preserve known research without expanding native parity experiments unless they add concrete reusable value; conserve tokens and repeated test work.
 
 - Inspect the current Git status and preserve unrelated changes. Work on a separate checkout when another task owns the same files.
 - Preserve exact application, library and codec identity checks. A successful local experiment does not authorize weakening a version/profile/hash guard.
