@@ -4,7 +4,7 @@
 
 开发交接入口：[AGENTS.md](AGENTS.md)、[CLAUDE.md](CLAUDE.md)、[贡献说明](CONTRIBUTING.md)。自有剪辑引擎、模型任务和画布接入集中在 [haoyong-video](https://github.com/Milllkey/haoyong-video)，本仓保留原生草稿互通职责。
 
-剪映 11.6 研究与主仓 0.22 独立能力从[统一交接入口](https://github.com/Milllkey/haoyong-video/blob/main/docs/CLAUDE-RESEARCH-HANDOFF.md)开始，按功能查看证据、接口和未知项；[独立 GIF 导出](https://github.com/Milllkey/haoyong-video/blob/main/docs/GIF-EXPORT.md)、[本地人声／伴奏、四轨分离](https://github.com/Milllkey/haoyong-video/blob/main/docs/AUDIO-SEPARATION.md)与[补帧／慢动作](https://github.com/Milllkey/haoyong-video/blob/main/docs/FRAME-INTERPOLATION.md)均在主仓。Claude 负责后续画布产品集成；本仓提供可选原生草稿交接，独立导出不依赖剪映。11.6 已验证的构建、独立副本编辑、发布和正常 UI 导出，与尚未支持的原生无界面导出 ABI 分开。详见[贡献说明](CONTRIBUTING.md)。
+剪映 11.6 研究与主仓 0.23 独立能力从[统一交接入口](https://github.com/Milllkey/haoyong-video/blob/main/docs/CLAUDE-RESEARCH-HANDOFF.md)开始，按功能查看证据、接口和未知项；[独立 GIF 导出](https://github.com/Milllkey/haoyong-video/blob/main/docs/GIF-EXPORT.md)、[本地人声／伴奏、四轨分离](https://github.com/Milllkey/haoyong-video/blob/main/docs/AUDIO-SEPARATION.md)与[补帧／慢动作](https://github.com/Milllkey/haoyong-video/blob/main/docs/FRAME-INTERPOLATION.md)以及[本地防抖与安全裁剪](https://github.com/Milllkey/haoyong-video/blob/main/docs/VIDEO-STABILIZATION.md)均在主仓。Claude 负责后续画布产品集成；本仓提供可选原生草稿交接，独立导出不依赖剪映。11.6 已验证的构建、独立副本编辑、发布和正常 UI 导出，与尚未支持的原生无界面导出 ABI 分开。详见[贡献说明](CONTRIBUTING.md)。
 
 ## 功能
 
